@@ -6,6 +6,7 @@ import { asyncPreloadProcess } from './states/isPreload/action';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Navbar from './components/organisms/Navbar';
+import ArticlePage from './pages/ArticlePage';
 
 function App() {
   const {
@@ -40,6 +41,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/list-article" element={<ArticlePage />} />
         </Routes>
       </main>
     </div>

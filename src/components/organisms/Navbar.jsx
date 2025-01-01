@@ -29,7 +29,7 @@ function Navbar({ authUser, signOut }) {
 
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'Article', path: '/articles' },
+    { label: 'Article', path: '/list-article' },
     { label: 'Destination', path: '/destinations' },
     { label: 'About Us', path: '/about-us' },
   ];

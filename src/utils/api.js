@@ -90,12 +90,29 @@ const api = (() => {
     return data;
   }
 
+  async function getAllArticles() {
+    const response = await fetch(`${BASE_URL}/articles`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { articles } } = responseJson;
+
+    return articles;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
     register,
     login,
     getOwnProfile,
+    getAllArticles,
   };
 })();
 
