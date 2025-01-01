@@ -28,10 +28,10 @@ function Navbar({ authUser, signOut }) {
   };
 
   const menuItems = [
-    { label: 'Home', path: '/' },
-    { label: 'Article', path: '/list-article' },
-    { label: 'Destination', path: '/destinations' },
-    { label: 'About Us', path: '/about-us' },
+    { label: 'Beranda', path: '/' },
+    { label: 'Artikel', path: '/list-article' },
+    { label: 'Destinasi', path: '/list-destination' },
+    { label: 'Tentang Kami', path: '/about-us' },
   ];
 
   return (
