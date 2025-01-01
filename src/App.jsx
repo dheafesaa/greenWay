@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { asyncUnsetAuthUser } from './states/authUser/action';
+import { asyncPreloadProcess } from './states/isPreload/action';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Navbar from './components/organisms/Navbar';
