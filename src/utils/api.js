@@ -106,6 +106,22 @@ const api = (() => {
     return articles;
   }
 
+  async function getAllAboutUs() {
+    const response = await fetch(`${BASE_URL}/about-us`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { aboutUs } } = responseJson;
+
+    return aboutUs;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
@@ -113,6 +129,7 @@ const api = (() => {
     login,
     getOwnProfile,
     getAllArticles,
+    getAllAboutUs,
   };
 })();
 
