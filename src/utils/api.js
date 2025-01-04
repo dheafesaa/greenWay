@@ -154,6 +154,60 @@ const api = (() => {
     return detailDestination;
   }
 
+  async function createCommentDestination(destinationId, comment) {
+    const response = await _fetchWithAuth(`${BASE_URL}/destination/${destinationId}/comment`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ destinationId, comment }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { comment: newComment } } = responseJson;
+
+    return newComment;
+  }
+
+  async function getAllCampaigns() {
+    const response = await fetch(`${BASE_URL}/campaigns`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { campaigns } } = responseJson;
+
+    return campaigns;
+  }
+
+  async function getDetailCampaign(id) {
+    const response = await fetch(`${BASE_URL}/campaign/${id}`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { campaign } } = responseJson;
+
+    return campaign;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
@@ -164,6 +218,9 @@ const api = (() => {
     getAllAboutUs,
     getAllDestinations,
     getDetailDestination,
+    createCommentDestination,
+    getAllCampaigns,
+    getDetailCampaign,
   };
 })();
 

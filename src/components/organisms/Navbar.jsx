@@ -31,6 +31,7 @@ function Navbar({ authUser, signOut }) {
     { label: 'Beranda', path: '/' },
     { label: 'Artikel', path: '/list-article' },
     { label: 'Destinasi', path: '/list-destination' },
+    { label: 'Campaign', path: '/list-campaign' },
     { label: 'Tentang Kami', path: '/about-us' },
   ];
 

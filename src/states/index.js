@@ -6,6 +6,7 @@ import loadingReducer from './loading/reducer';
 import articlesReducer from './articles/reducer';
 import aboutUsReducer from './aboutUS/reducer';
 import destinationReducer from './destinations/reducer';
+import campaignReducer from './campaign/reducer';
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     articles: articlesReducer,
     aboutUs: aboutUsReducer,
     destination: destinationReducer,
+    campaign: campaignReducer,
   },
 });
 
