@@ -154,6 +154,28 @@ const api = (() => {
     return detailDestination;
   }
 
+  async function createCommentDestination(destinationId, comment) {
+    const response = await _fetchWithAuth(`${BASE_URL}/destination/${destinationId}/comment`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ destinationId, comment }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { comment: newComment } } = responseJson;
+
+    return newComment;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
@@ -164,6 +186,7 @@ const api = (() => {
     getAllAboutUs,
     getAllDestinations,
     getDetailDestination,
+    createCommentDestination,
   };
 })();
 

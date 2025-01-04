@@ -4,6 +4,7 @@ import { setLoading } from '../loading/action';
 const ActionType = {
   RECEIVE_DESTINATIONS: 'RECEIVE_DESTINATIONS',
   RECEIVE_DETAIL_DESTINATION: 'RECEIVE_DETAIL_DESTINATION',
+  CREATE_COMMENT_DESTINATION: 'CREATE_COMMENT_DESTINATION',
 };
 
 function receiveDestinations(destinations) {
@@ -19,6 +20,13 @@ function receiveDetailDestination(detailDestination) {
   return {
     type: ActionType.RECEIVE_DETAIL_DESTINATION,
     payload: detailDestination,
+  };
+}
+
+function createCommentDestination(comment) {
+  return {
+    type: ActionType.CREATE_COMMENT_DESTINATION,
+    payload: comment,
   };
 }
 
@@ -54,9 +62,21 @@ function asyncReceiveDetailDestination(destinationId) {
   };
 }
 
+function asyncCreateCommentDestination(destinationId, comment) {
+  return async (dispatch) => {
+    try {
+      const newComment = await api.createCommentDestination(destinationId, comment);
+      dispatch(createCommentDestination(newComment));
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+}
+
 export {
   ActionType,
   receiveDestinations,
   asyncReceiveDestinations,
   asyncReceiveDetailDestination,
+  asyncCreateCommentDestination,
 };
