@@ -16,7 +16,7 @@ function DestinationDetail({
         <DetailCardItem
           title="Campaign"
           content="Unlock Your Story"
-          link={`/campaigns/${idCampaign}`}
+          link={`/detail-campaign/${idCampaign}`}
           isButton
         />
       )}

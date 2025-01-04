@@ -46,7 +46,7 @@ function CampaignCardItem({
       >
         <Typography
           component={Link}
-          to={`/campaigns/${id}`}
+          to={`/detail-campaign/${id}`}
           variant="body1"
           color={Colors.white}
           fontWeight="bold"

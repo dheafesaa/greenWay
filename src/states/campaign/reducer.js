@@ -1,7 +1,8 @@
-import { ActionType } from './action';
+import { ActionType } from "./action";
 
 const initialState = {
   campaigns: [],
+  detailCampaign: null,
 };
 
 const campaignReducer = (state = initialState, action = {}) => {
@@ -10,6 +11,11 @@ const campaignReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         campaigns: action.payload.campaigns,
+      };
+    case ActionType.RECEIVE_DETAIL_CAMPAIGN:
+      return {
+        ...state,
+        detailCampaign: action.payload.detailCampaign,
       };
     default:
       return state;

@@ -11,6 +11,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import DestinationPage from './pages/DestinationPage';
 import DestinationDetailPage from './pages/DestinationDetailPage';
 import CampaignPage from './pages/CampaignPage';
+import CampaignDetailPage from './pages/CampaignDetailPage';
 
 function App() {
   const {
@@ -49,6 +50,7 @@ function App() {
           <Route path="/list-destination" element={<DestinationPage />} />
           <Route path="/detail-destination/:id" element={<DestinationDetailPage />} />
           <Route path="/list-campaign" element={<CampaignPage />} />
+          <Route path="/detail-campaign/:id" element={<CampaignDetailPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
         </Routes>
       </main>
