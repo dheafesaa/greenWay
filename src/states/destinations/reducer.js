@@ -5,7 +5,7 @@ const initialState = {
   detailDestination: null,
 };
 
-const destinationsReducer = (state = initialState, action = {}) => {
+const destinationReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case ActionType.RECEIVE_DESTINATIONS:
       return {
@@ -22,4 +22,4 @@ const destinationsReducer = (state = initialState, action = {}) => {
   }
 };
 
-export default destinationsReducer;
+export default destinationReducer;

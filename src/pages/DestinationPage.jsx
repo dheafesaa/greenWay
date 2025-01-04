@@ -19,7 +19,7 @@ function DestinationPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loading = useSelector((state) => state.loading.loading);
-  const destinations = useSelector((state) => state.destinations.destinations);
+  const destinations = useSelector((state) => state.destination.destinations);
 
   const [filteredDestinations, setFilteredDestinations] = useState(destinations);
   const [searchKeyword, setSearchKeyword] = useState('');

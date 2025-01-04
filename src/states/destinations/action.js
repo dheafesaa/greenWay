@@ -4,7 +4,6 @@ import { setLoading } from '../loading/action';
 const ActionType = {
   RECEIVE_DESTINATIONS: 'RECEIVE_DESTINATIONS',
   RECEIVE_DETAIL_DESTINATION: 'RECEIVE_DETAIL_DESTINATION',
-  CREATE_COMMENT_DESTINATION: 'CREATE_COMMENT_DESTINATION',
 };
 
 function receiveDestinations(destinations) {
@@ -34,7 +33,7 @@ function asyncReceiveDestinations() {
     } finally {
       setTimeout(() => {
         dispatch(setLoading(false));
-      }, 3000);
+      }, 1500);
     }
   };
 }
@@ -50,7 +49,7 @@ function asyncReceiveDetailDestination(destinationId) {
     } finally {
       setTimeout(() => {
         dispatch(setLoading(false));
-      }, 3000);
+      }, 1500);
     }
   };
 }
@@ -60,5 +59,4 @@ export {
   receiveDestinations,
   asyncReceiveDestinations,
   asyncReceiveDetailDestination,
-  asyncCreateCommentDestination,
 };

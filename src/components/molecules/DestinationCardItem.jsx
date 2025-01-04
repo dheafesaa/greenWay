@@ -45,7 +45,7 @@ function DestinationCardItem({
       >
         <Typography
           component={Link}
-          to={`/destinations/${id}`}
+          to={`/detail-destination/${id}`}
           variant="body1"
           color={Colors.white}
           fontWeight="bold"
