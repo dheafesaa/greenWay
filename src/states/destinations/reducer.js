@@ -1,7 +1,8 @@
-import { ActionType } from './action';
+import { ActionType } from "./action";
 
 const initialState = {
   destinations: [],
+  detailDestination: null,
 };
 
 const destinationsReducer = (state = initialState, action = {}) => {
@@ -10,6 +11,11 @@ const destinationsReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         destinations: action.payload.destinations,
+      };
+    case ActionType.RECEIVE_DETAIL_DESTINATION:
+      return {
+        ...state,
+        detailDestination: action.payload,
       };
     default:
       return state;

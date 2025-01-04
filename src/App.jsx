@@ -9,6 +9,7 @@ import Navbar from './components/organisms/Navbar';
 import ArticlePage from './pages/ArticlePage';
 import AboutUsPage from './pages/AboutUsPage';
 import DestinationPage from './pages/DestinationPage';
+import DestinationDetailPage from './pages/DestinationDetailPage';
 
 function App() {
   const {
@@ -45,6 +46,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/list-article" element={<ArticlePage />} />
           <Route path="/list-destination" element={<DestinationPage />} />
+          <Route path="/detail-destination/:id" element={<DestinationDetailPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
         </Routes>
       </main>
