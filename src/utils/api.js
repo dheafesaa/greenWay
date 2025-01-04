@@ -176,6 +176,22 @@ const api = (() => {
     return newComment;
   }
 
+  async function getAllCampaigns() {
+    const response = await fetch(`${BASE_URL}/campaigns`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { campaigns } } = responseJson;
+
+    return campaigns;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
@@ -187,6 +203,7 @@ const api = (() => {
     getAllDestinations,
     getDetailDestination,
     createCommentDestination,
+    getAllCampaigns,
   };
 })();
 
