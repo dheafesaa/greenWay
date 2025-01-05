@@ -12,6 +12,7 @@ import DestinationPage from './pages/DestinationPage';
 import DestinationDetailPage from './pages/DestinationDetailPage';
 import CampaignPage from './pages/CampaignPage';
 import CampaignDetailPage from './pages/CampaignDetailPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   const {
@@ -46,6 +47,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/*" element={<HomePage />} />
           <Route path="/list-article" element={<ArticlePage />} />
           <Route path="/list-destination" element={<DestinationPage />} />
           <Route path="/detail-destination/:id" element={<DestinationDetailPage />} />
