@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { asyncSetAuthUser } from "../states/authUser/action";
 import Box from "@mui/material/Box";
 import AuthContent from "../components/molecules/AuthContent";
 import LoginInput from "../components/organisms/LoginInput";
-import { asyncSetAuthUser } from "../states/authUser/action";
-import { imgLogin } from "../utils/data";
+import LoginImg from "../assets/login.jpg";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ function LoginPage() {
       justifyContent="space-between"
     >
       <Box flex={{ xs: "1 1 100%", sm: "1 1 50%" }}>
-        <AuthContent src={imgLogin} alt="imgLogin" />
+        <AuthContent src={LoginImg} alt="LoginImg" />
       </Box>
       <Box flex={{ xs: "1 1 100%", sm: "1 1 50%" }}>
         <LoginInput login={onLogin} />

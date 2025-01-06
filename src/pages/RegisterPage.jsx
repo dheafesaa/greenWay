@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { asyncRegisterUser } from "../states/users/action";
 import Box from "@mui/material/Box";
 import AuthContent from "../components/molecules/AuthContent";
 import RegisterInput from "../components/organisms/RegisterInput";
-import { asyncRegisterUser } from "../states/users/action";
-import { imgRegister } from "../utils/data";
+import RegisterImg from "../assets/register.jpg"
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function RegisterPage() {
       justifyContent="space-between"
     >
       <Box flex={{ xs: "1 1 100%", sm: "1 1 50%" }}>
-        <AuthContent src={imgRegister} alt="imgLogin" />
+        <AuthContent src={RegisterImg} alt="RegisterImg" />
       </Box>
       <Box flex={{ xs: "1 1 100%", sm: "1 1 50%" }}>
         <RegisterInput register={onRegister} />
