@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncReceiveCampaigns } from '../states/campaign/action';
+import { categoryCards, videoWonderfulIndonesia } from '../utils/data';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import CardVideo from '../components/atoms/CardVideo';
 import Loader from '../components/atoms/Loader';
 import Title from '../components/atoms/Title';
 import CampaignCardList from '../components/organisms/CampaignCardList';
+import CategoryCardList from '../components/organisms/CategoryCardList';
+import CommunityCard from '../components/organisms/CommunityCard';
 import HeroLayout from '../components/organisms/HeroLayout';
-import WelcomImg from '../assets/landing-1.png'
+import WelcomeImg from '../assets/landing-welcome.png'
+import CommunityImg from '../assets/landing-community.png'
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -32,11 +37,27 @@ function HomePage() {
               description="Welcome to a new era of travel where adventure meets environmental stewardship.
               Your Gateway to Sustainable Exploration in Indonesia! Start your journey with us and traverse
               Indonesia in a more responsible, eco-conscious manner."
-              imageUrl={WelcomImg}
+              imageUrl={WelcomeImg}
             />
+            <CategoryCardList categoryCards={categoryCards} />
             <Box py={6}>
               <Title title="Campaign" />
               <CampaignCardList campaignCards={limitedCampaigns} showSeeAll />
+            </Box>
+            <Box py={6}>
+              <Title title="Nature of Indonesia" />
+              <CardVideo
+                src={videoWonderfulIndonesia}
+                alt="Wonderful Indonesia"
+              />
+            </Box>
+            <Box py={6}>
+              <CommunityCard
+                title="Community Is Calling, No Need to Stalling"
+                description="Join our discussion community! Discover new ideas and exchange experience
+                with thousands of members. Let's join now!"
+                imageUrl={CommunityImg}
+              />
             </Box>
           </>
         )}
