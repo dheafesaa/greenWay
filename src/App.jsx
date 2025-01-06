@@ -5,6 +5,7 @@ import { asyncUnsetAuthUser } from './states/authUser/action';
 import { asyncPreloadProcess } from './states/isPreload/action';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import Footer from './components/atoms/Footer';
 import Navbar from './components/organisms/Navbar';
 import ArticlePage from './pages/ArticlePage';
 import AboutUsPage from './pages/AboutUsPage';
@@ -56,6 +57,9 @@ function App() {
           <Route path="/about-us" element={<AboutUsPage />} />
         </Routes>
       </main>
+      <footer>
+        {!isLoginOrRegisterPage && <Footer />}
+      </footer>
     </div>
   );
 }
