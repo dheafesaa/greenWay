@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncReceiveCampaigns } from '../states/campaign/action';
-import { videoWonderfulIndonesia } from '../utils/data';
+import { categoryCards, videoWonderfulIndonesia } from '../utils/data';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import CardVideo from '../components/atoms/CardVideo';
 import Loader from '../components/atoms/Loader';
 import Title from '../components/atoms/Title';
 import CampaignCardList from '../components/organisms/CampaignCardList';
+import CategoryCardList from '../components/organisms/CategoryCardList';
 import HeroLayout from '../components/organisms/HeroLayout';
 import WelcomImg from '../assets/landing-1.png'
 
@@ -36,6 +37,7 @@ function HomePage() {
               Indonesia in a more responsible, eco-conscious manner."
               imageUrl={WelcomImg}
             />
+            <CategoryCardList categoryCards={categoryCards} />
             <Box py={6}>
               <Title title="Campaign" />
               <CampaignCardList campaignCards={limitedCampaigns} showSeeAll />
