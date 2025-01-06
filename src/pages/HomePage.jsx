@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncReceiveCampaigns } from '../states/campaign/action';
+import { videoWonderfulIndonesia } from '../utils/data';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import CardVideo from '../components/atoms/CardVideo';
 import Loader from '../components/atoms/Loader';
 import Title from '../components/atoms/Title';
 import CampaignCardList from '../components/organisms/CampaignCardList';
@@ -37,6 +39,13 @@ function HomePage() {
             <Box py={6}>
               <Title title="Campaign" />
               <CampaignCardList campaignCards={limitedCampaigns} showSeeAll />
+            </Box>
+            <Box py={6}>
+              <Title title="Nature of Indonesia" />
+              <CardVideo
+                src={videoWonderfulIndonesia}
+                alt="Wonderful Indonesia"
+              />
             </Box>
           </>
         )}
