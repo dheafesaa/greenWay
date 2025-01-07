@@ -7,7 +7,7 @@ import {
   BiSolidDislike,
   BiComment,
 } from 'react-icons/bi';
-import { postedAt } from '../../utils';
+import { postedAt } from '../../utils/functions';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
