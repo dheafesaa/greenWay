@@ -306,6 +306,85 @@ const api = (() => {
     }
   }
 
+  async function getDetailDiscussion(id) {
+    const response = await fetch(`${BASE_URL}/discussion/${id}`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { detailDiscussion } } = responseJson;
+
+    return detailDiscussion;
+  }
+
+  async function toggleLikeComment(discussionId, commentId) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${discussionId}/comment/${commentId}/up-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId,
+        commentId,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function toggleUnlikeComment(discussionId, commentId) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${discussionId}/comment/${commentId}/down-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId,
+        commentId,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function toggleNeutralizeComment(discussionId, commentId) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${discussionId}/comment/${commentId}/netral-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId,
+        commentId,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
   return {
     putAccessToken,
     getAccessToken,
@@ -323,7 +402,11 @@ const api = (() => {
     createDiscussion,
     toggleLikeDiscussion,
     toggleUnlikeDiscussion,
-    toggleNeutralizeDiscussion
+    toggleNeutralizeDiscussion,
+    getDetailDiscussion, 
+    toggleLikeComment, 
+    toggleUnlikeComment, 
+    toggleNeutralizeComment
   };
 })();
 
