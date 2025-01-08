@@ -224,6 +224,28 @@ const api = (() => {
     return discussions;
   }
 
+  async function createDiscussion(title, category, body) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title, category, body }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { discussion } } = responseJson;
+
+    return discussion;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
@@ -238,6 +260,7 @@ const api = (() => {
     getAllCampaigns,
     getDetailCampaign,
     getAllDiscussions,
+    createDiscussion,
   };
 })();
 

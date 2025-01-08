@@ -3,6 +3,7 @@ import { setLoading } from '../loading/action';
 
 const ActionType = {
   RECEIVE_DISCUSSIONS: 'RECEIVE_DISCUSSIONS',
+  CREATE_DISCUSSION: 'CREATE_DISCUSSION',
 };
 
 function receiveDiscussions(discussions) {
@@ -10,6 +11,15 @@ function receiveDiscussions(discussions) {
     type: ActionType.RECEIVE_DISCUSSIONS,
     payload: {
       discussions,
+    },
+  };
+}
+
+function createDiscussion(data) {
+  return {
+    type: ActionType.CREATE_DISCUSSION,
+    payload: {
+      data,
     },
   };
 }
@@ -30,8 +40,20 @@ function asyncReceiveDiscussions() {
   };
 }
 
+function asyncCreateDiscussion(title, category, body) {
+  return async (dispatch) => {
+    try {
+      const newData = await api.createDiscussion(title, category, body);
+      dispatch(createDiscussion(newData));
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+}
+
 export {
   ActionType,
   receiveDiscussions,
   asyncReceiveDiscussions,
+  asyncCreateDiscussion,
 };
