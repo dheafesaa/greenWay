@@ -430,7 +430,6 @@ const api = (() => {
     login,
     getOwnProfile,
     getAllCampaigns,
-    getAllReviews,
     getAllArticles,
     getAllDestinations,
     createDiscussion,
@@ -447,6 +446,7 @@ const api = (() => {
     toggleUnlikeComment,
     toggleNeutralizeComment,
     createCommentDiscussion,
+    getAllReviews,
   };
 })();
 
