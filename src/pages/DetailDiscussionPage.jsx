@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   asyncReceiveDetailDiscussion,
+  asyncCreateCommentDiscussion,
   asyncToggleLikeComment,
   asyncToggleLikeDetailDiscussion,
   asyncToggleNeutralizeComment,
@@ -16,8 +17,9 @@ import Typography from '@mui/material/Typography';
 import Alert from '../components/atoms/Alert';
 import Loader from '../components/atoms/Loader';
 import Title from '../components/atoms/Title';
-import DetailDiscussion from '../components/organisms/DetailDiscussion';
+import AddCommentDiscussion from '../components/organisms/AddCommentDiscussion';
 import CommentDiscussionCardList from '../components/organisms/CommentDiscussionCardList';
+import DetailDiscussion from '../components/organisms/DetailDiscussion';
 
 function DetailDiscussionPage() {
   const { id } = useParams();
@@ -54,6 +56,10 @@ function DetailDiscussionPage() {
     dispatch(asyncToggleNeutralizeComment(detailDiscussion.id, commentId));
   };
 
+  const onSubmitComment = (comment) => {
+    dispatch(asyncCreateCommentDiscussion(detailDiscussion.id, comment));
+  };
+
   if (!detailDiscussion) {
     return 'Please wait';
   }
@@ -79,10 +85,14 @@ function DetailDiscussionPage() {
                 {detailDiscussion?.comments?.length}
                 )
               </Typography>
+              {authUser ? (
+                <AddCommentDiscussion onSubmit={onSubmitComment} />
+              ) : (
                 <Alert
                   title="Permission Required"
                   body="Please login or create an account to start a new discussion!"
                 />
+              )}
               <CommentDiscussionCardList
                 {...detailDiscussion}
                 authUser={authUser ? authUser.id : null}

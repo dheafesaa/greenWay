@@ -385,6 +385,28 @@ const api = (() => {
     }
   }
 
+  async function createCommentDiscussion(discussionId, comment) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${discussionId}/comment`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ discussionId, comment }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { comment: newComment } } = responseJson;
+
+    return newComment;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
@@ -406,7 +428,8 @@ const api = (() => {
     getDetailDiscussion, 
     toggleLikeComment, 
     toggleUnlikeComment, 
-    toggleNeutralizeComment
+    toggleNeutralizeComment,
+    createCommentDiscussion,
   };
 })();
 
