@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncReceiveCampaigns } from '../states/campaign/action';
+import { asyncReceiveReviews } from '../states/reviews/action';
 import { categoryCards, videoWonderfulIndonesia } from '../utils/data';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -11,6 +12,7 @@ import CampaignCardList from '../components/organisms/CampaignCardList';
 import CategoryCardList from '../components/organisms/CategoryCardList';
 import CommunityCard from '../components/organisms/CommunityCard';
 import HeroLayout from '../components/organisms/HeroLayout';
+import ReviewCardList from '../components/organisms/ReviewCardList';
 import WelcomeImg from '../assets/landing-welcome.png'
 import CommunityImg from '../assets/landing-community.png'
 
@@ -18,9 +20,11 @@ function HomePage() {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.loading.loading);
   const campaigns = useSelector((state) => state.campaign.campaigns);
+  const reviews = useSelector((state) => state.review.reviews);
 
   useEffect(() => {
     dispatch(asyncReceiveCampaigns());
+    dispatch(asyncReceiveReviews())
   }, [dispatch]);
 
   const limitedCampaigns = campaigns.slice(0, 4);
@@ -43,6 +47,10 @@ function HomePage() {
             <Box py={6}>
               <Title title="Campaign" />
               <CampaignCardList campaignCards={limitedCampaigns} showSeeAll />
+            </Box>
+            <Box py={6}>
+              <Title title="People Are Talking . ." />
+              <ReviewCardList testimoniCards={reviews} />
             </Box>
             <Box py={6}>
               <Title title="Nature of Indonesia" />

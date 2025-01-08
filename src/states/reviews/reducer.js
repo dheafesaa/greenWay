@@ -1,14 +1,19 @@
-import { ActionType } from './action';
+import { ActionType } from "./action";
 
-const initialState = [];
+const initialState = {
+  reviews: [],
+};
 
-const reviewsReducer = (state = initialState, action = {}) => {
+const reviewReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case ActionType.RECEIVE_REVIEWS:
-      return action.payload.reviews;
+      return {
+        ...state,
+        reviews: action.payload.reviews,
+      };
     default:
       return state;
   }
 };
 
-export default reviewsReducer;
+export default reviewReducer;
