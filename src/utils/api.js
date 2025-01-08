@@ -407,27 +407,44 @@ const api = (() => {
     return newComment;
   }
 
+  async function getAllReviews() {
+    const response = await fetch(`${BASE_URL}/reviews`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { reviews } } = responseJson;
+
+    return reviews;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
     register,
     login,
     getOwnProfile,
+    getAllCampaigns,
+    getAllReviews,
     getAllArticles,
-    getAllAboutUs,
     getAllDestinations,
+    createDiscussion,
+    getAllAboutUs,
     getDetailDestination,
     createCommentDestination,
-    getAllCampaigns,
     getDetailCampaign,
     getAllDiscussions,
-    createDiscussion,
     toggleLikeDiscussion,
     toggleUnlikeDiscussion,
     toggleNeutralizeDiscussion,
-    getDetailDiscussion, 
-    toggleLikeComment, 
-    toggleUnlikeComment, 
+    getDetailDiscussion,
+    toggleLikeComment,
+    toggleUnlikeComment,
     toggleNeutralizeComment,
     createCommentDiscussion,
   };
