@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncReceiveDiscussions } from "../states/discussion/action";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import Typography from '@mui/material/Typography';
 import AddButton from "../components/atoms/AddButton";
 import Alert from "../components/atoms/Alert";
 import Loader from "../components/atoms/Loader";
@@ -14,7 +15,7 @@ function DiscussionPage() {
   const dispatch = useDispatch();
   const authUser = useSelector((state) => state.authUser);
   const loading = useSelector((state) => state.loading.loading);
-  const discussions = useSelector((state) => state?.discussion);
+  const discussions = useSelector((state) => state?.discussion?.discussions);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -40,6 +41,9 @@ function DiscussionPage() {
     ...discussion,
     authUser: authUser ? authUser.id : null,
   }));
+
+  console.log({discussions});
+  
 
   return (
     <Box sx={{ pt: 2, pb: { xs: 6, md: 8 } }}>
