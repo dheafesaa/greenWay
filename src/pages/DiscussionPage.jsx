@@ -63,7 +63,7 @@ function DiscussionPage() {
             </Box>
             <Title title="Discussion Available" textAlign="left" />
             {authUser?.id ? (
-              <AddButton link="/discussions/add" />
+              <AddButton link="/add-thread" />
             ) : (
               <Alert
                 severity="info"

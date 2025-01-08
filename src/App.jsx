@@ -15,6 +15,7 @@ import CampaignPage from './pages/CampaignPage';
 import CampaignDetailPage from './pages/CampaignDetailPage';
 import HomePage from './pages/HomePage';
 import DiscussionPage from './pages/DiscussionPage';
+import AddDiscussionPage from './pages/AddDiscussionPage';
 
 function App() {
   const {
@@ -57,6 +58,7 @@ function App() {
           <Route path="/detail-campaign/:id" element={<CampaignDetailPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/list-thread" element={<DiscussionPage />} />
+          <Route path="/add-thread" element={<AddDiscussionPage />} />
         </Routes>
       </main>
       <footer>
