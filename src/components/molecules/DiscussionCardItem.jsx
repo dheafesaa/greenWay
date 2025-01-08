@@ -59,7 +59,7 @@ function DiscussionCardItem({
   };
 
   const handleComment = () => {
-    navigate(`/discussions/${id}`);
+    navigate(`/thread/detail/${id}`);
   };
 
   return (
@@ -94,7 +94,7 @@ function DiscussionCardItem({
         </Box>
         <Typography
           component={Link}
-          to={`/discussions/${id}`}
+          to={`/thread/detail//${id}`}
           variant="h6"
           color="black"
           fontWeight="bold"
