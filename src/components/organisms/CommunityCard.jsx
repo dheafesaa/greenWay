@@ -19,7 +19,7 @@ function CommunityCard({ title, description, imageUrl }) {
         <ContentCardItem title={title} description={description} />
         <Button
           component={Link}
-          to="/list-thread"
+          to="/thread/list"
           variant="contained"
           size="medium"
           sx={{ mt: { xs: 2, md: 4 } }}

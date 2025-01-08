@@ -246,6 +246,66 @@ const api = (() => {
     return discussion;
   }
 
+  async function toggleLikeDiscussion(id) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${id}/up-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId: id,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function toggleUnlikeDiscussion(id) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${id}/down-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId: id,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function toggleNeutralizeDiscussion(id) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${id}/netral-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId: id,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
   return {
     putAccessToken,
     getAccessToken,
@@ -261,6 +321,9 @@ const api = (() => {
     getDetailCampaign,
     getAllDiscussions,
     createDiscussion,
+    toggleLikeDiscussion,
+    toggleUnlikeDiscussion,
+    toggleNeutralizeDiscussion
   };
 })();
 

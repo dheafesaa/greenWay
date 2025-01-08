@@ -18,74 +18,83 @@ const discussionReducer = (state = initialState, action = {}) => {
         discussion: action.payload.data.discussion,
       };
     case ActionType.TOGGLE_LIKE_DISCUSSION:
-      return discussions.map((discussion) => {
-        if (discussion.id === action.payload.discussionId) {
-          const updatedUpVotesBy = discussion.upVotesBy.includes(
-            action.payload.userId,
-          )
-            ? discussion.upVotesBy.filter((id) => id !== action.payload.userId)
-            : [
-                ...discussion.upVotesBy.filter(
-                  (id) => id !== action.payload.userId,
-                ),
-                action.payload.userId,
-              ];
+      return {
+        ...state,
+        discussions: state.discussions.map((discussion) => {
+          if (discussion.id === action.payload.discussionId) {
+            const updatedUpVotesBy = discussion.upVotesBy.includes(
+              action.payload.userId,
+            )
+              ? discussion.upVotesBy.filter((id) => id !== action.payload.userId)
+              : [
+                  ...discussion.upVotesBy.filter(
+                    (id) => id !== action.payload.userId,
+                  ),
+                  action.payload.userId,
+                ];
 
-          const updatedDownVotesBy = discussion.downVotesBy.filter(
-            (id) => id !== action.payload.userId,
-          );
+            const updatedDownVotesBy = discussion.downVotesBy.filter(
+              (id) => id !== action.payload.userId,
+            );
 
-          return {
-            ...discussion,
-            upVotesBy: updatedUpVotesBy,
-            downVotesBy: updatedDownVotesBy,
-          };
-        }
-        return discussion;
-      });
+            return {
+              ...discussion,
+              upVotesBy: updatedUpVotesBy,
+              downVotesBy: updatedDownVotesBy,
+            };
+          }
+          return discussion;
+        }),
+      };
     case ActionType.TOGGLE_UNLIKE_DISCUSSION:
-      return discussions.map((discussion) => {
-        if (discussion.id === action.payload.discussionId) {
-          const updatedDownVotesBy = discussion.downVotesBy.includes(
-            action.payload.userId,
-          )
-            ? discussion.downVotesBy.filter(
-                (id) => id !== action.payload.userId,
-              )
-            : [
-                ...discussion.downVotesBy.filter(
+      return {
+        ...state,
+        discussions: state.discussions.map((discussion) => {
+          if (discussion.id === action.payload.discussionId) {
+            const updatedDownVotesBy = discussion.downVotesBy.includes(
+              action.payload.userId,
+            )
+              ? discussion.downVotesBy.filter(
                   (id) => id !== action.payload.userId,
-                ),
-                action.payload.userId,
-              ];
+                )
+              : [
+                  ...discussion.downVotesBy.filter(
+                    (id) => id !== action.payload.userId,
+                  ),
+                  action.payload.userId,
+                ];
 
-          const updatedUpVotesBy = discussion.upVotesBy.filter(
-            (id) => id !== action.payload.userId,
-          );
+            const updatedUpVotesBy = discussion.upVotesBy.filter(
+              (id) => id !== action.payload.userId,
+            );
 
-          return {
-            ...discussion,
-            upVotesBy: updatedUpVotesBy,
-            downVotesBy: updatedDownVotesBy,
-          };
-        }
-        return discussion;
-      });
+            return {
+              ...discussion,
+              upVotesBy: updatedUpVotesBy,
+              downVotesBy: updatedDownVotesBy,
+            };
+          }
+          return discussion;
+        }),
+      };
     case ActionType.TOGGLE_NEUTRALIZE_DISCUSSION:
-      return discussions.map((discussion) => {
-        if (discussion.id === action.payload.discussionId) {
-          return {
-            ...discussion,
-            upVotesBy: discussion.upVotesBy.filter(
-              (id) => id !== action.payload.userId,
-            ),
-            downVotesBy: discussion.downVotesBy.filter(
-              (id) => id !== action.payload.userId,
-            ),
-          };
-        }
-        return discussion;
-      });
+      return {
+        ...state,
+        discussions: state.discussions.map((discussion) => {
+          if (discussion.id === action.payload.discussionId) {
+            return {
+              ...discussion,
+              upVotesBy: discussion.upVotesBy.filter(
+                (id) => id !== action.payload.userId,
+              ),
+              downVotesBy: discussion.downVotesBy.filter(
+                (id) => id !== action.payload.userId,
+              ),
+            };
+          }
+          return discussion;
+        }),
+      };
     default:
       return state;
   }

@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncReceiveDiscussions } from "../states/discussion/action";
+import {
+  asyncReceiveDiscussions,
+  asyncToogleLikeDiscussion,
+  asyncToogleNeutralizeDiscussion,
+  asyncToogleUnlikeDiscussion,
+} from "../states/discussion/action";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
 import AddButton from "../components/atoms/AddButton";
 import Alert from "../components/atoms/Alert";
 import Loader from "../components/atoms/Loader";
@@ -42,8 +47,17 @@ function DiscussionPage() {
     authUser: authUser ? authUser.id : null,
   }));
 
-  console.log({discussions});
-  
+  const onLike = (id) => {
+    dispatch(asyncToogleLikeDiscussion(id));
+  };
+
+  const onUnlike = (id) => {
+    dispatch(asyncToogleUnlikeDiscussion(id));
+  };
+
+  const onNeutralize = (id) => {
+    dispatch(asyncToogleNeutralizeDiscussion(id));
+  };
 
   return (
     <Box sx={{ pt: 2, pb: { xs: 6, md: 8 } }}>
@@ -63,7 +77,7 @@ function DiscussionPage() {
             </Box>
             <Title title="Discussion Available" textAlign="left" />
             {authUser?.id ? (
-              <AddButton link="/add-thread" />
+              <AddButton link="/thread/add" />
             ) : (
               <Alert
                 severity="info"
@@ -71,7 +85,12 @@ function DiscussionPage() {
                 body="You need to login or create a new account to start a discussion."
               />
             )}
-            <DiscussionCardList discussions={discussionList} />
+            <DiscussionCardList
+              discussions={discussionList}
+              like={onLike}
+              unlike={onUnlike}
+              neutralize={onNeutralize}
+            />
           </>
         )}
       </Container>

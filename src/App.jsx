@@ -57,8 +57,8 @@ function App() {
           <Route path="/list-campaign" element={<CampaignPage />} />
           <Route path="/detail-campaign/:id" element={<CampaignDetailPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/list-thread" element={<DiscussionPage />} />
-          <Route path="/add-thread" element={<AddDiscussionPage />} />
+          <Route path="/thread/list" element={<DiscussionPage />} />
+          <Route path="/thread/add" element={<AddDiscussionPage />} />
         </Routes>
       </main>
       <footer>
