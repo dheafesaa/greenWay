@@ -118,7 +118,7 @@ function asyncToggleLikeDetailDiscussion(discussionId) {
     }
     dispatch(toggleLikeDiscussionDetail({ discussionId, userId: authUser.id }));
     try {
-      await api.toggleLikeDiscussionDetail(discussionId);
+      await api.toggleLikeDiscussion(discussionId);
     } catch (error) {
       alert(error.message);
       dispatch(toggleLikeDiscussionDetail({ discussionId, userId: authUser.id }));
@@ -135,7 +135,7 @@ function asyncToggleUnlikeDetailDiscussion(discussionId) {
     }
     dispatch(toggleUnlikeDiscussionDetail({ discussionId, userId: authUser.id }));
     try {
-      await api.toggleUnlikeDiscussionDetail(discussionId);
+      await api.toggleUnlikeDiscussion(discussionId);
     } catch (error) {
       alert(error.message);
       dispatch(toggleUnlikeDiscussionDetail({ discussionId, userId: authUser.id }));
@@ -148,7 +148,7 @@ function asyncToggleNeutralizeDetailDiscussion(discussionId) {
     const { authUser } = getState();
     dispatch(toggleNeutralizeDiscussionDetail({ discussionId, userId: authUser.id }));
     try {
-      await api.toggleNeutralizeDiscussionDetail(discussionId);
+      await api.toggleNeutralizeDiscussion(discussionId);
     } catch (error) {
       alert(error.message);
       dispatch(toggleNeutralizeDiscussionDetail({ discussionId, userId: authUser.id }));
