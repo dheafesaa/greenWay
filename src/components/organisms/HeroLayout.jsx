@@ -19,7 +19,7 @@ function HeroLayout({ title, description, imageUrl }) {
         <HeroContent title={title} description={description} />
         <Button
           component={Link}
-          to="/destinations"
+          to="/list-destination"
           variant="contained"
           size="medium"
           sx={{ mt: { xs: 2, md: 4 } }}
