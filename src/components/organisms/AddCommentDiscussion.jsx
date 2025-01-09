@@ -13,7 +13,7 @@ function AddCommentDiscussion({ onSubmit }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!content.trim()) {
-      setError('Please fill in the comment field.');
+      setError('Kolom komentar tidak boleh kosong.');
     } else {
       setError('');
       onSubmit(content);

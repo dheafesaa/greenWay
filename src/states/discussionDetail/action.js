@@ -160,7 +160,7 @@ function asyncToggleLikeComment(discussionId, commentId) {
   return async (dispatch, getState) => {
     const { authUser } = getState();
     if (!authUser) {
-      alert('Please login first!');
+      alert('Silakan masuk terlebih dahulu!');
       return;
     }
     dispatch(toggleLikeComment({ commentId, userId: authUser.id }));
@@ -177,7 +177,7 @@ function asyncToggleUnlikeComment(discussionId, commentId) {
   return async (dispatch, getState) => {
     const { authUser } = getState();
     if (!authUser) {
-      alert('Please login first!');
+      alert('Silakan masuk terlebih dahulu!');
       return;
     }
     dispatch(toggleUnlikeComment({ commentId, userId: authUser.id }));

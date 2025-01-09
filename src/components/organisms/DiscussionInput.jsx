@@ -18,7 +18,7 @@ function DiscussionInput({ addDiscussion }) {
     event.preventDefault();
 
     if (!title || !category || !body) {
-      setError('Please fill out all fields.');
+      setError('Semua kolom wajib diisi.');
       return;
     }
 

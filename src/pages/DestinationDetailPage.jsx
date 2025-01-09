@@ -36,7 +36,7 @@ function DestinationDetailPage() {
   };
 
   if (!detailDestination) {
-    return "Please wait";
+    return "Harap Tunggu";
   }
 
   return (

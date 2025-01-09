@@ -61,7 +61,7 @@ function DetailDiscussionPage() {
   };
 
   if (!detailDiscussion) {
-    return 'Please wait';
+    return 'Harap Tunggu';
   }
 
   return (
