@@ -29,6 +29,7 @@ import dheaPhoto from '../assets/dhea.jpg';
 import fransiskaPhoto from '../assets/fransiska.jpeg';
 import allanPhoto from '../assets/allan.jpeg';
 import yogaPhoto from '../assets/yoga.jpg';
+import fathurPhoto from '../assets/fathurrohim.jpg';
 
 export const profileData = [
   {
@@ -58,6 +59,48 @@ export const profileData = [
     nim: '24575001',
     prodi: 'Teknik Informatika',
     photo: yogaPhoto
+  },
+  {
+    id: 5,
+    name: 'Fathurrohim',
+    nim: '19574006',
+    prodi: 'Teknik Informatika',
+    photo: fathurPhoto
+  },
+  {
+    id: 6,
+    name: 'Emerenti H. R. Odas',
+    nim: '22560002',
+    prodi: 'Sistem Informasi',
+    photo: ''
+  },
+  {
+    id: 7,
+    name: 'Achmad Nurhadi',
+    nim: '23577019',
+    prodi: 'Teknik Informatika',
+    photo: ''
+  },
+  {
+    id: 8,
+    name: 'Christian Mangadil',
+    nim: '21560026',
+    prodi: 'Sistem Informasi',
+    photo: ''
+  },
+  {
+    id: 9,
+    name: 'Ishaq Maulana',
+    nim: '21560013',
+    prodi: 'Sistem Informasi',
+    photo: ''
+  },
+  {
+    id: 10,
+    name: 'Maria Anjelina Lelu',
+    nim: '22560011',
+    prodi: 'Sistem Informasi',
+    photo: ''
   },
 ];
 
