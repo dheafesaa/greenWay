@@ -24,7 +24,7 @@ function HeroLayout({ title, description, imageUrl }) {
           size="medium"
           sx={{ mt: { xs: 2, md: 4 } }}
         >
-          Go Travel
+          Mulai Perjalanan
         </Button>
       </Box>
       <Box flex={{ xs: '1 1 100%', md: '1 1 50%' }}>

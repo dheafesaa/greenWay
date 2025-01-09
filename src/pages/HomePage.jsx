@@ -37,10 +37,10 @@ function HomePage() {
         ) : (
           <>
             <HeroLayout
-              title="TRAVEL AND SAVE NATURE "
-              description="Welcome to a new era of travel where adventure meets environmental stewardship.
-              Your Gateway to Sustainable Exploration in Indonesia! Start your journey with us and traverse
-              Indonesia in a more responsible, eco-conscious manner."
+              title="JELAJAHI DAN LINDUNGI ALAM"
+              description="Selamat datang di era baru perjalanan, di mana petualangan
+              berpadu dengan kepedulian lingkungan. Mulailah perjalanan bersama kami untuk
+              menjelajahi Indonesia dengan cara yang lebih bertanggung jawab dan ramah lingkungan."
               imageUrl={WelcomeImg}
             />
             <CategoryCardList categoryCards={categoryCards} />
@@ -49,11 +49,11 @@ function HomePage() {
               <CampaignCardList campaignCards={limitedCampaigns} showSeeAll />
             </Box>
             <Box py={6}>
-              <Title title="People Are Talking . ." />
+              <Title title="Cerita Seru Bersama GreenWay" />
               <ReviewCardList testimoniCards={reviews} />
             </Box>
             <Box py={6}>
-              <Title title="Nature of Indonesia" />
+              <Title title="Pesonal Alam Indonesia" />
               <CardVideo
                 src={videoWonderfulIndonesia}
                 alt="Wonderful Indonesia"
@@ -61,9 +61,9 @@ function HomePage() {
             </Box>
             <Box py={6}>
               <CommunityCard
-                title="Community Is Calling, No Need to Stalling"
-                description="Join our discussion community! Discover new ideas and exchange experience
-                with thousands of members. Let's join now!"
+                title="Gabung Komunitas, Temukan Inspirasi"
+                description="Bergabunglah dalam komunitas diskusi kami! Jadilah bagian dari perubahan,
+                berbagi pengalaman, dan temukan inspirasi baru."
                 imageUrl={CommunityImg}
               />
             </Box>

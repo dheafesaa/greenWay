@@ -24,7 +24,7 @@ function CommunityCard({ title, description, imageUrl }) {
           size="medium"
           sx={{ mt: { xs: 2, md: 4 } }}
         >
-          Join Now
+          Mulai Diskusi
         </Button>
       </Box>
       <Box flex={{ xs: '1 1 100%', md: '1 1 50%' }}>

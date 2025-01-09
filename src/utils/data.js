@@ -1,35 +1,15 @@
-export const categoryCards = [
-  { id: 1, title: '14', description: 'Initiatives' },
-  { id: 2, title: '52', description: 'Destinations' },
-  { id: 3, title: '31', description: 'Campaigns' },
-  { id: 4, title: '25', description: 'Articles' },
-];
-
-export const purposeCards = [
-  {
-    id: 1,
-    title: 'Explore Destinations',
-    description:
-        'Explore travel destination and share experience with exploler.',
-  },
-  {
-    id: 2,
-    title: 'Sustainable Journeys',
-    description: 'Discover our curated selection of campaign destinations.',
-  },
-  {
-    id: 3,
-    title: 'Green Travel Actions',
-    description:
-        'Learn about our initiatives for sustainable travel awareness.',
-  },
-];
-
 import dheaPhoto from '../assets/dhea.jpg';
 import fransiskaPhoto from '../assets/fransiska.jpeg';
 import allanPhoto from '../assets/allan.jpeg';
 import yogaPhoto from '../assets/yoga.jpg';
 import fathurPhoto from '../assets/fathurrohim.jpg';
+
+export const categoryCards = [
+  { id: 1, title: '14', description: 'Inisiatif' },
+  { id: 2, title: '52', description: 'Destinasi' },
+  { id: 3, title: '31', description: 'Campaign' },
+  { id: 4, title: '25', description: 'Artikel' },
+];
 
 export const profileData = [
   {
