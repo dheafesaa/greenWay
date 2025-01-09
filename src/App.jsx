@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { asyncUnsetAuthUser } from './states/authUser/action';
@@ -43,11 +43,11 @@ function App() {
   const isLoginOrRegisterPage = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-    <div className="app">
-       <header>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <header>
         {!isLoginOrRegisterPage && <Navbar authUser={authUser} signOut={onSignOut} />}
       </header>
-      <main>
+      <main style={{ flexGrow: 1 }}>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
