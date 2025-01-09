@@ -39,19 +39,19 @@ function DiscussionInput({ addDiscussion }) {
       onSubmit={handleSubmit}
     >
       {error && <Alert severity="error" body={error} />}
-      <InputText id="title" name="title" label="Title" value={title} onChange={onTitleChange} required />
-      <InputText id="category" name="category" label="Category" value={category} onChange={onCategoryChange} required />
+      <InputText id="title" name="title" label="Judul" value={title} onChange={onTitleChange} required />
+      <InputText id="category" name="category" label="Kategori" value={category} onChange={onCategoryChange} required />
       <InputText
         id="content"
         name="content"
-        label="Content"
+        label="Konten"
         value={body}
         onChange={onBodyChange}
         multiline
         rows={4}
         required
       />
-      <Button variant="contained" size="large" type="submit" fullWidth>Create</Button>
+      <Button variant="contained" size="large" type="submit" fullWidth>Simpan</Button>
     </Box>
   );
 }

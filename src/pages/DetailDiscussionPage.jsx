@@ -71,7 +71,7 @@ function DetailDiscussionPage() {
           <Loader />
         ) : (
           <>
-            <Title title="Detail Discussion" textAlign="left" />
+            <Title title="Detail Diskusi" textAlign="left" />
             <DetailDiscussion
               {...detailDiscussion}
               authUser={authUser ? authUser.id : null}
@@ -81,7 +81,7 @@ function DetailDiscussionPage() {
             />
             <Box py={4}>
               <Typography variant="h4">
-                Comments (
+                Balasan (
                 {detailDiscussion?.comments?.length}
                 )
               </Typography>
@@ -89,8 +89,8 @@ function DetailDiscussionPage() {
                 <AddCommentDiscussion onSubmit={onSubmitComment} />
               ) : (
                 <Alert
-                  title="Permission Required"
-                  body="Please login or create an account to start a new discussion!"
+                  title="Izin Diperlukan"
+                  body="Silakan masuk atau buat akun untuk memulai diskusi baru!"
                 />
               )}
               <CommentDiscussionCardList

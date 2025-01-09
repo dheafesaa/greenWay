@@ -29,13 +29,13 @@ function AddDiscussionPage() {
       <Container maxWidth="lg">
         {authUser ? (
           <>
-            <Title title="Create New Discussion" textAlign="left" />
+            <Title title="Buat Diskusi Baru" textAlign="left" />
             <DiscussionInput addDiscussion={onAddDiscussion} />
           </>
         ) : (
           <Alert
-            title="Permission Required"
-            body="Please login or create an account to start a new discussion!"
+            title="Izin Diperlukan"
+            body="Silakan masuk atau buat akun untuk memulai diskusi baru!"
           />
         )}
       </Container>

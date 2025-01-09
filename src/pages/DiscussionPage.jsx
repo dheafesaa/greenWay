@@ -68,21 +68,21 @@ function DiscussionPage() {
           <>
             <Box py={6}>
               <Typography variant="h6" color="black">
-                Popular Category
+                Kategori Populer
               </Typography>
               <PopularCardList
                 categories={categories}
                 onCategorySelect={handleCategorySelect}
               />
             </Box>
-            <Title title="Discussion Available" textAlign="left" />
+            <Title title="Ruang Diskusi" textAlign="left" />
             {authUser?.id ? (
               <AddButton link="/thread/add" />
             ) : (
               <Alert
                 severity="info"
-                title="Hold Up!"
-                body="You need to login or create a new account to start a discussion."
+                title="Akses Terbatas!"
+                body="Silakan login atau buat akun untuk memulai diskusi dan bergabung dengan komunitas."
               />
             )}
             <DiscussionCardList
