@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import CommentCardItem, {commentItemShape} from "../molecules/CommentCardItem";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import CommentCardItem, { commentItemShape } from '../molecules/CommentCardItem';
 
 function CommentCardList({ comments }) {
   return (

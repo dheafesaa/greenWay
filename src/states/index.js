@@ -14,7 +14,7 @@ const store = configureStore({
   reducer: {
     authUser: authUserReducer,
     loadingBar: loadingBarReducer,
-    users: usersReducer, 
+    users: usersReducer,
     loading: loadingReducer,
     articles: articlesReducer,
     destination: destinationReducer,

@@ -17,70 +17,70 @@ export const profileData = [
     name: 'Dhea Fesa Athallah',
     nim: '21570002',
     prodi: 'Teknik Informatika',
-    photo: dheaPhoto
+    photo: dheaPhoto,
   },
   {
     id: 2,
     name: 'Fransiska Warkop Anjali',
     nim: '21560020',
     prodi: 'Sistem Informasi',
-    photo: fransiskaPhoto
+    photo: fransiskaPhoto,
   },
   {
     id: 3,
     name: 'Allan Yuliansyah',
     nim: '24565004',
     prodi: 'Sistem Informasi',
-    photo: allanPhoto
+    photo: allanPhoto,
   },
   {
     id: 4,
     name: 'Yoga Wanda Pratama',
     nim: '24575001',
     prodi: 'Teknik Informatika',
-    photo: yogaPhoto
+    photo: yogaPhoto,
   },
   {
     id: 5,
     name: 'Fathurrohim',
     nim: '19574006',
     prodi: 'Teknik Informatika',
-    photo: fathurPhoto
+    photo: fathurPhoto,
   },
   {
     id: 6,
     name: 'Emerenti H. R. Odas',
     nim: '22560002',
     prodi: 'Sistem Informasi',
-    photo: ''
+    photo: '',
   },
   {
     id: 7,
     name: 'Achmad Nurhadi',
     nim: '23577019',
     prodi: 'Teknik Informatika',
-    photo: ''
+    photo: '',
   },
   {
     id: 8,
     name: 'Christian Mangadil',
     nim: '21560026',
     prodi: 'Sistem Informasi',
-    photo: ''
+    photo: '',
   },
   {
     id: 9,
     name: 'Ishaq Maulana',
     nim: '21560013',
     prodi: 'Sistem Informasi',
-    photo: ''
+    photo: '',
   },
   {
     id: 10,
     name: 'Maria Anjelina Lelu',
     nim: '22560011',
     prodi: 'Sistem Informasi',
-    photo: ''
+    photo: '',
   },
 ];
 

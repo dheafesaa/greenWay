@@ -1,11 +1,11 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { asyncRegisterUser } from "../states/users/action";
-import Box from "@mui/material/Box";
-import AuthContent from "../components/molecules/AuthContent";
-import RegisterInput from "../components/organisms/RegisterInput";
-import RegisterImg from "../assets/register.jpg"
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import Box from '@mui/material/Box';
+import { asyncRegisterUser } from '../states/users/action';
+import AuthContent from '../components/molecules/AuthContent';
+import RegisterInput from '../components/organisms/RegisterInput';
+import RegisterImg from '../assets/register.jpg';
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -20,13 +20,13 @@ function RegisterPage() {
       width="100%"
       display="flex"
       alignItems="center"
-      flexDirection={{ xs: "column", sm: "row" }}
+      flexDirection={{ xs: 'column', sm: 'row' }}
       justifyContent="space-between"
     >
-      <Box flex={{ xs: "1 1 100%", sm: "1 1 50%" }}>
+      <Box flex={{ xs: '1 1 100%', sm: '1 1 50%' }}>
         <AuthContent src={RegisterImg} alt="RegisterImg" />
       </Box>
-      <Box flex={{ xs: "1 1 100%", sm: "1 1 50%" }}>
+      <Box flex={{ xs: '1 1 100%', sm: '1 1 50%' }}>
         <RegisterInput register={onRegister} />
       </Box>
     </Box>

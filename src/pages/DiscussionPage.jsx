@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 import {
   asyncReceiveDiscussions,
   asyncToogleLikeDiscussion,
   asyncToogleNeutralizeDiscussion,
   asyncToogleUnlikeDiscussion,
-} from "../states/discussion/action";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import AddButton from "../components/atoms/AddButton";
-import Alert from "../components/atoms/Alert";
-import Loader from "../components/atoms/Loader";
-import Title from "../components/atoms/Title";
-import DiscussionCardList from "../components/organisms/DiscussionCardList";
-import PopularCardList from "../components/organisms/PopularCardList";
+} from '../states/discussion/action';
+import AddButton from '../components/atoms/AddButton';
+import Alert from '../components/atoms/Alert';
+import Loader from '../components/atoms/Loader';
+import Title from '../components/atoms/Title';
+import DiscussionCardList from '../components/organisms/DiscussionCardList';
+import PopularCardList from '../components/organisms/PopularCardList';
 
 function DiscussionPage() {
   const dispatch = useDispatch();
@@ -38,8 +38,8 @@ function DiscussionPage() {
 
   const filteredDiscussions = selectedCategory
     ? discussions.filter(
-        (discussion) => discussion.category === selectedCategory,
-      )
+      (discussion) => discussion.category === selectedCategory,
+    )
     : discussions;
 
   const discussionList = filteredDiscussions.map((discussion) => ({

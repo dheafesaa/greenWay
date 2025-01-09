@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
-import { asyncReceiveDestinations } from '../states/destinations/action';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { asyncReceiveDestinations } from '../states/destinations/action';
 import Alert from '../components/atoms/Alert';
 import Header from '../components/atoms/Header';
 import Loader from '../components/atoms/Loader';
@@ -48,13 +48,13 @@ function DestinationPage() {
         ) : (
           <>
             <Header
-              title={" Temukan Tempat Baru untuk Menjelajahi Keindahan Indonesia"}
+              title=" Temukan Tempat Baru untuk Menjelajahi Keindahan Indonesia"
               subtitle={(
                 <>
                   Rasakan pengalaman menjelajahi keindahan alam dan budaya Indonesia.
                   {' '}
                   {isTabletOrDesktop && <br />}
-                  Dari pesona pegunungan hingga indahnya pantai, 
+                  Dari pesona pegunungan hingga indahnya pantai,
                   setiap perjalanan membawa cerita yang tak terlupakan.
                 </>
               )}

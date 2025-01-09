@@ -7,13 +7,13 @@ import {
   BiSolidDislike,
   BiComment,
 } from 'react-icons/bi';
-import { postedAt } from '../../utils/functions';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { postedAt } from '../../utils/functions';
 import ActionButton from '../atoms/ActionButton';
 import Colors from '../atoms/Colors';
 

@@ -16,13 +16,13 @@ function receiveCampaigns(campaigns) {
 }
 
 function receiveDetailCampaign(detailCampaign) {
-    return {
-      type: ActionType.RECEIVE_DETAIL_CAMPAIGN,
-      payload: {
-        detailCampaign,
-      },
-    };
-  }
+  return {
+    type: ActionType.RECEIVE_DETAIL_CAMPAIGN,
+    payload: {
+      detailCampaign,
+    },
+  };
+}
 
 function asyncReceiveCampaigns() {
   return async (dispatch) => {
@@ -41,21 +41,20 @@ function asyncReceiveCampaigns() {
 }
 
 function asyncReceiveDetailCampaign(idCampaign) {
-    return async (dispatch) => {
-      dispatch(setLoading(true));
-      try {
-        const detailCampaignData = await api.getDetailCampaign(idCampaign);
-        dispatch(receiveDetailCampaign(detailCampaignData));
-      } catch (error) {
-        alert(error.message);
-      } finally {
-        setTimeout(() => {
-          dispatch(setLoading(false));
-        }, 1500);
-      }
-    };
-  }
-  
+  return async (dispatch) => {
+    dispatch(setLoading(true));
+    try {
+      const detailCampaignData = await api.getDetailCampaign(idCampaign);
+      dispatch(receiveDetailCampaign(detailCampaignData));
+    } catch (error) {
+      alert(error.message);
+    } finally {
+      setTimeout(() => {
+        dispatch(setLoading(false));
+      }, 1500);
+    }
+  };
+}
 
 export {
   ActionType,

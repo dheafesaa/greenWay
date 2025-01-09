@@ -1,4 +1,4 @@
-import { ActionType } from "./action";
+import { ActionType } from './action';
 
 const initialState = {
   discussions: [],
@@ -27,11 +27,11 @@ const discussionReducer = (state = initialState, action = {}) => {
             )
               ? discussion.upVotesBy.filter((id) => id !== action.payload.userId)
               : [
-                  ...discussion.upVotesBy.filter(
-                    (id) => id !== action.payload.userId,
-                  ),
-                  action.payload.userId,
-                ];
+                ...discussion.upVotesBy.filter(
+                  (id) => id !== action.payload.userId,
+                ),
+                action.payload.userId,
+              ];
 
             const updatedDownVotesBy = discussion.downVotesBy.filter(
               (id) => id !== action.payload.userId,
@@ -55,14 +55,14 @@ const discussionReducer = (state = initialState, action = {}) => {
               action.payload.userId,
             )
               ? discussion.downVotesBy.filter(
-                  (id) => id !== action.payload.userId,
-                )
+                (id) => id !== action.payload.userId,
+              )
               : [
-                  ...discussion.downVotesBy.filter(
-                    (id) => id !== action.payload.userId,
-                  ),
-                  action.payload.userId,
-                ];
+                ...discussion.downVotesBy.filter(
+                  (id) => id !== action.payload.userId,
+                ),
+                action.payload.userId,
+              ];
 
             const updatedUpVotesBy = discussion.upVotesBy.filter(
               (id) => id !== action.payload.userId,

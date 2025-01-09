@@ -136,7 +136,7 @@ export {
   receiveDiscussions,
   asyncReceiveDiscussions,
   asyncCreateDiscussion,
-  asyncToogleLikeDiscussion, 
-  asyncToogleUnlikeDiscussion, 
+  asyncToogleLikeDiscussion,
+  asyncToogleUnlikeDiscussion,
   asyncToogleNeutralizeDiscussion,
 };

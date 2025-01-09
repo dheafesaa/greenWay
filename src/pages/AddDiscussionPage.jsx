@@ -1,14 +1,14 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import {
   asyncCreateDiscussion,
   asyncReceiveDiscussions,
-} from "../states/discussion/action";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Alert from "../components/atoms/Alert";
-import Title from "../components/atoms/Title";
-import DiscussionInput from "../components/organisms/DiscussionInput";
+} from '../states/discussion/action';
+import Alert from '../components/atoms/Alert';
+import Title from '../components/atoms/Title';
+import DiscussionInput from '../components/organisms/DiscussionInput';
 
 function AddDiscussionPage() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function AddDiscussionPage() {
       dispatch(asyncReceiveDiscussions());
     } catch (error) {
       // eslint-disable-next-line no-console
-      console.error("Failed to create discussion:", error);
+      console.error('Failed to create discussion:', error);
     }
   };
 

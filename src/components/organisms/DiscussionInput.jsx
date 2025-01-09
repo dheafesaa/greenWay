@@ -24,7 +24,7 @@ function DiscussionInput({ addDiscussion }) {
 
     setError('');
     addDiscussion(title, category, body);
-    navigate('//thread/list');
+    navigate('/thread/list');
   };
 
   return (

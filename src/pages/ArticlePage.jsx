@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
-import { asyncReceiveArticles } from '../states/articles/action';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { asyncReceiveArticles } from '../states/articles/action';
 import Header from '../components/atoms/Header';
 import Loader from '../components/atoms/Loader';
 import ArticleCardList from '../components/organisms/ArticleCardList';
@@ -31,7 +31,7 @@ function ArticlePage() {
             <Header
               title={(
                 <>
-                  Waktu Luang Jadi Lebih Bermakna 
+                  Waktu Luang Jadi Lebih Bermakna
                   {' '}
                   {isTabletOrDesktop && <br />}
                   dengan Artikel Inspiratif
@@ -39,7 +39,7 @@ function ArticlePage() {
               )}
               subtitle={(
                 <>
-                  Tersedia beragam artikel bermanfaat untuk dibaca. 
+                  Tersedia beragam artikel bermanfaat untuk dibaca.
                   {' '}
                   {isTabletOrDesktop && <br />}
                   Manfaatkan waktu luangmu sebaik mungkin dan temukan inspirasi baru.

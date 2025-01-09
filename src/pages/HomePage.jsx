@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import { asyncReceiveCampaigns } from '../states/campaign/action';
 import { asyncReceiveReviews } from '../states/reviews/action';
 import { categoryCards, videoWonderfulIndonesia } from '../utils/data';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import CardVideo from '../components/atoms/CardVideo';
 import Loader from '../components/atoms/Loader';
 import Title from '../components/atoms/Title';
@@ -13,8 +13,8 @@ import CategoryCardList from '../components/organisms/CategoryCardList';
 import CommunityCard from '../components/organisms/CommunityCard';
 import HeroLayout from '../components/organisms/HeroLayout';
 import ReviewCardList from '../components/organisms/ReviewCardList';
-import WelcomeImg from '../assets/landing-welcome.png'
-import CommunityImg from '../assets/landing-community.png'
+import WelcomeImg from '../assets/landing-welcome.png';
+import CommunityImg from '../assets/landing-community.png';
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ function HomePage() {
 
   useEffect(() => {
     dispatch(asyncReceiveCampaigns());
-    dispatch(asyncReceiveReviews())
+    dispatch(asyncReceiveReviews());
   }, [dispatch]);
 
   const limitedCampaigns = campaigns.slice(0, 4);

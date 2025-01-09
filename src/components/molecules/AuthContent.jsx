@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import CardMedia from "@mui/material/CardMedia";
+import React from 'react';
+import PropTypes from 'prop-types';
+import CardMedia from '@mui/material/CardMedia';
 
 function AuthContent({ src, alt }) {
   return (
@@ -9,7 +9,7 @@ function AuthContent({ src, alt }) {
       image={src}
       alt={alt}
       sx={{
-        height: "100vh",
+        height: '100vh',
       }}
     />
   );

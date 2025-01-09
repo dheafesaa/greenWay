@@ -4,7 +4,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-function ProfileCardItem({ photo, name, nim, prodi }) {
+
+function ProfileCardItem({
+  photo, name, nim, prodi,
+}) {
   return (
     <Card sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
