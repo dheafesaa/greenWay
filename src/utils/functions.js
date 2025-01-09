@@ -8,15 +8,15 @@ function postedAt(date) {
   const diffSeconds = Math.floor(diff / 1000);
 
   if (diffDays > 0) {
-    return `${diffDays} Days Ago`;
+    return `${diffDays} Hari Lalu`;
   } if (diffHours > 0) {
-    return `${diffHours} Hours Ago`;
+    return `${diffHours} Jam Lalu`;
   } if (diffMinutes > 0) {
-    return `${diffMinutes} Minutes Ago`;
+    return `${diffMinutes} Menit Lalu`;
   } if (diffSeconds > 0) {
-    return `${diffSeconds} Seconds Ago`;
+    return `${diffSeconds} Detik Lalu`;
   }
-  return 'Just Now';
+  return 'Baru Saja';
 }
 
 export { postedAt };
