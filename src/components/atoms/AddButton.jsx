@@ -9,7 +9,7 @@ function AddButton({ link }) {
     <Button variant="contained" size="medium" component={Link} to={link}>
       <FiPlus size={24} />
       {' '}
-      Add Discussion
+      Diskusi Baru
     </Button>
   );
 }

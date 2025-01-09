@@ -31,17 +31,17 @@ function CampaignPage() {
             <Header
               title={
                 <>
-                  Join the Campaign for Protecting Nature,{" "}
+                  Mari Bersama Lindungi Alam,{" "}
                   {isTabletOrDesktop && <br />}
-                  Preserving Beauty
+                  Lestarikan Keindahan
                 </>
               }
               subtitle={
                 <>
-                  Join our efforts to safeguard the natural wonders of
-                  Indonesia. {isTabletOrDesktop && <br />}
-                  Explore our environmental initiatives and be part of the
-                  change for a sustainable future.
+                  Jadilah bagian dari perjalanan untuk melestarikan warisan alam Indonesia. 
+                  {isTabletOrDesktop && <br />}
+                  Ikuti perjalanan kami dalam melindungi keindahan alam dan mendukung
+                  keberlanjutan lingkungan.
                 </>
               }
             />

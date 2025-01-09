@@ -19,12 +19,12 @@ function CommunityCard({ title, description, imageUrl }) {
         <ContentCardItem title={title} description={description} />
         <Button
           component={Link}
-          to="/list-thread"
+          to="/thread/list"
           variant="contained"
           size="medium"
           sx={{ mt: { xs: 2, md: 4 } }}
         >
-          Join Now
+          Mulai Diskusi
         </Button>
       </Box>
       <Box flex={{ xs: '1 1 100%', md: '1 1 50%' }}>

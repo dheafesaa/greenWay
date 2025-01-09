@@ -14,16 +14,16 @@ function CampaignDetail({
       <CardImage src={picture} alt={name} borderRadius maxHeight={{ xs: '100%', md: '600px' }} />
       <HeaderDetail location={location} title={name} />
       <DetailCardItem title="ID Campaign" content={id} />
-      <DetailCardItem title="Time Periode" content={date} />
+      <DetailCardItem title="Waktu Pelaksanaan" content={date} />
       {authUser ? (
-        <DetailCardItem title="Link Enrollment" content="Click Me!" link={link} isLink />
+        <DetailCardItem title="Tautan Pendaftaran" content="Click Me!" link={link} isLink />
       ) : (
         <DetailCardItem
-          title="Link Enrollment"
-          content={<Alert title="Permission Required" body="Please login or create an account to join campaign!" />}
+          title="Tautan Pendaftaran"
+          content={<Alert title="Izin Diperlukan" body="Silakan masuk atau buat akun untuk bergabung dalam kegiatan!" />}
         />
       )}
-      <DetailCardItem title="Description" content={description} />
+      <DetailCardItem title="Deskripsi Kegiatan" content={description} />
     </Box>
   );
 }

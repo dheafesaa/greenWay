@@ -31,18 +31,18 @@ function ArticlePage() {
             <Header
               title={(
                 <>
-                  Read Insightful Articles In
+                  Waktu Luang Jadi Lebih Bermakna 
                   {' '}
                   {isTabletOrDesktop && <br />}
-                  Your Free Time
+                  dengan Artikel Inspiratif
                 </>
               )}
               subtitle={(
                 <>
-                  There are many choices of useful articles to read, let&#39;s
+                  Tersedia beragam artikel bermanfaat untuk dibaca. 
                   {' '}
                   {isTabletOrDesktop && <br />}
-                  make the best your free time to get inspired.
+                  Manfaatkan waktu luangmu sebaik mungkin dan temukan inspirasi baru.
                 </>
               )}
             />

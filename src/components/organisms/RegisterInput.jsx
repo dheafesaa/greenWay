@@ -17,7 +17,7 @@ function RegisterInput({ register }) {
 
   const handleRegister = () => {
     if (!email || !password) {
-      setError('Please fill out all fields.');
+      setError('Semua kolom wajib diisi.');
     } else {
       setError('');
       register({ name, email, password });
@@ -32,15 +32,15 @@ function RegisterInput({ register }) {
           <span style={{ color: '#000' }}>Way</span>
         </Typography>
         {error && <Alert severity="error" body={error} />}
-        <InputText id="name" name="name" label="Name" value={name} onChange={onNameChange} />
+        <InputText id="name" name="name" label="Username" value={name} onChange={onNameChange} />
         <InputText id="email" name="email" label="Email" value={email} onChange={onEmailChange} />
         <InputText id="password" name="email" label="Password" type="password" value={password} onChange={onPasswordChange} />
         <Button variant="contained" size="large" fullWidth onClick={handleRegister}>Sign Up</Button>
       </Box>
       <Typography variant="body1">
-        Already have an account?
+       Sudah punya akun?
         {' '}
-        <Link to="/login">Login</Link>
+        <Link to="/login">Masuk</Link>
       </Typography>
     </Box>
   );

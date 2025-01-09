@@ -9,7 +9,7 @@ function ProfileCardList({ profileCards }) {
     <Box sx={{ flexGrow: 1, py: 4 }}>
       <Grid container spacing={4}>
         {profileCards.map((profileCard) => (
-          <Grid item xs={12} sm={6} md={4} key={profileCard.id}>
+          <Grid item xs={12} sm={6} md={3} key={profileCard.id}>
             <ProfileCardItem {...profileCard} />
           </Grid>
         ))}

@@ -36,7 +36,7 @@ function DestinationDetailPage() {
   };
 
   if (!detailDestination) {
-    return "Please wait";
+    return "Harap Tunggu";
   }
 
   return (
@@ -49,14 +49,14 @@ function DestinationDetailPage() {
             <DestinationDetail {...detailDestination} />
             <Box py={4}>
               <Typography variant="h4">
-                Comments ({detailDestination.comments.length})
+                Komentar ({detailDestination.comments.length})
               </Typography>
               {authUser ? (
                 <CommentInput onSubmit={onSubmitComment} />
               ) : (
                 <Alert
-                  title="Permission Required"
-                  body="Please login or create an account to start a new comment!"
+                  title="Izin Diperlukan"
+                  body="Silakan masuk atau buat akun untuk memulai komentar baru!"
                 />
               )}
               <CommentCardList comments={detailDestination.comments} />

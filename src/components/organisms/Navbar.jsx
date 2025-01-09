@@ -62,7 +62,7 @@ function Navbar({ authUser, signOut }) {
                 ))}
               </Box>
               {authUser ? (
-                <Button variant="contained" size="small" onClick={signOut}>Sign Out</Button>
+                <Button variant="contained" size="small" onClick={signOut}>Logout</Button>
               ) : (
                 <Button variant="contained" size="small" component={Link} to="/login">Login</Button>
               )}

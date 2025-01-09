@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import useInput from '../../hooks/useInput';
 import Alert from '../atoms/Alert';
 import InputText from '../atoms/InputText';
-import useInput from '../../hooks/useInput';
 
-function CommentInput({ onSubmit }) {
+function AddCommentDiscussion({ onSubmit }) {
   const [content, onContentChange, setContent] = useInput('');
   const [error, setError] = useState('');
 
@@ -46,8 +46,8 @@ function CommentInput({ onSubmit }) {
   );
 }
 
-CommentInput.propTypes = {
+AddCommentDiscussion.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default CommentInput;
+export default AddCommentDiscussion;

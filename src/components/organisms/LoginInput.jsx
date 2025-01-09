@@ -16,7 +16,7 @@ function LoginInput({ login }) {
 
   const handleLogin = () => {
     if (!email || !password) {
-      setError('Please fill out all fields.');
+      setError('Semua kolom wajib diisi.');
     } else {
       setError('');
       login({ email, password });
@@ -36,9 +36,9 @@ function LoginInput({ login }) {
         <Button variant="contained" size="large" fullWidth onClick={handleLogin}>Sign In</Button>
       </Box>
       <Typography variant="body1">
-        Don&apos;t have an account?
+        Belum punya akun?
         {' '}
-        <Link to="/register">Register</Link>
+        <Link to="/register">Daftar</Link>
       </Typography>
     </Box>
   );

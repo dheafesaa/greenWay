@@ -15,12 +15,12 @@ function DestinationDetail({
       {idCampaign && (
         <DetailCardItem
           title="Campaign"
-          content="Unlock Your Story"
+          content="Jelajah Bersama"
           link={`/detail-campaign/${idCampaign}`}
           isButton
         />
       )}
-      <DetailCardItem title="Description" content={description} />
+      <DetailCardItem title="Deskripsi" content={description} />
     </Box>
   );
 }

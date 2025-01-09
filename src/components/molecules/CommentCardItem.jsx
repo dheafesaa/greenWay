@@ -39,7 +39,7 @@ function CommentCardItem({
               {owner.name}
             </Typography>
             <Typography variant="body1" color="textSecondary">
-              Posted At
+              Postingan
               {' '}
               {postedAt(createdAt)}
             </Typography>

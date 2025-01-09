@@ -224,20 +224,229 @@ const api = (() => {
     return discussions;
   }
 
+  async function createDiscussion(title, category, body) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title, category, body }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { discussion } } = responseJson;
+
+    return discussion;
+  }
+
+  async function toggleLikeDiscussion(id) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${id}/up-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId: id,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function toggleUnlikeDiscussion(id) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${id}/down-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId: id,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function toggleNeutralizeDiscussion(id) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${id}/netral-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId: id,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function getDetailDiscussion(id) {
+    const response = await fetch(`${BASE_URL}/discussion/${id}`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { detailDiscussion } } = responseJson;
+
+    return detailDiscussion;
+  }
+
+  async function toggleLikeComment(discussionId, commentId) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${discussionId}/comment/${commentId}/up-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId,
+        commentId,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function toggleUnlikeComment(discussionId, commentId) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${discussionId}/comment/${commentId}/down-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId,
+        commentId,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function toggleNeutralizeComment(discussionId, commentId) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${discussionId}/comment/${commentId}/netral-votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        discussionId,
+        commentId,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+  }
+
+  async function createCommentDiscussion(discussionId, comment) {
+    const response = await _fetchWithAuth(`${BASE_URL}/discussion/${discussionId}/comment`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ discussionId, comment }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { comment: newComment } } = responseJson;
+
+    return newComment;
+  }
+
+  async function getAllReviews() {
+    const response = await fetch(`${BASE_URL}/reviews`);
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const { data: { reviews } } = responseJson;
+
+    return reviews;
+  }
+
   return {
     putAccessToken,
     getAccessToken,
     register,
     login,
     getOwnProfile,
+    getAllCampaigns,
     getAllArticles,
-    getAllAboutUs,
     getAllDestinations,
+    createDiscussion,
+    getAllAboutUs,
     getDetailDestination,
     createCommentDestination,
-    getAllCampaigns,
     getDetailCampaign,
     getAllDiscussions,
+    toggleLikeDiscussion,
+    toggleUnlikeDiscussion,
+    toggleNeutralizeDiscussion,
+    getDetailDiscussion,
+    toggleLikeComment,
+    toggleUnlikeComment,
+    toggleNeutralizeComment,
+    createCommentDiscussion,
+    getAllReviews,
   };
 })();
 

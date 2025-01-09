@@ -15,6 +15,8 @@ import CampaignPage from './pages/CampaignPage';
 import CampaignDetailPage from './pages/CampaignDetailPage';
 import HomePage from './pages/HomePage';
 import DiscussionPage from './pages/DiscussionPage';
+import AddDiscussionPage from './pages/AddDiscussionPage';
+import DetailDiscussionPage from './pages/DetailDiscussionPage';
 
 function App() {
   const {
@@ -56,7 +58,9 @@ function App() {
           <Route path="/list-campaign" element={<CampaignPage />} />
           <Route path="/detail-campaign/:id" element={<CampaignDetailPage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
-          <Route path="/list-thread" element={<DiscussionPage />} />
+          <Route path="/thread/list" element={<DiscussionPage />} />
+          <Route path="/thread/add" element={<AddDiscussionPage />} />
+          <Route path="/thread/detail/:id" element={<DetailDiscussionPage />} />
         </Routes>
       </main>
       <footer>

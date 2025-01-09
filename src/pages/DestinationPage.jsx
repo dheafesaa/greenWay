@@ -48,22 +48,14 @@ function DestinationPage() {
         ) : (
           <>
             <Header
-              title={(
-                <>
-                  Find The Next Places to Explore
-                  {' '}
-                  {isTabletOrDesktop && <br />}
-                  The Beauty of The Indonesia
-                </>
-              )}
+              title={" Temukan Tempat Baru untuk Menjelajahi Keindahan Indonesia"}
               subtitle={(
                 <>
-                  Discover your dream adventure here. Every corner of
-                  Indonesia&#39;s beauty awaits
+                  Rasakan pengalaman menjelajahi keindahan alam dan budaya Indonesia.
                   {' '}
                   {isTabletOrDesktop && <br />}
-                  you with unforgettable memories. With Greenway, explore it all
-                  now!
+                  Dari pesona pegunungan hingga indahnya pantai, 
+                  setiap perjalanan membawa cerita yang tak terlupakan.
                 </>
               )}
             />
@@ -76,8 +68,9 @@ function DestinationPage() {
               <Box py={4}>
                 <Alert
                   severity="info"
-                  title="Information"
-                  body="Sorry, no destinations match your search criteria. Please try again with different keywords."
+                  title="Informasi"
+                  body="Maaf, tidak ada destinasi yang sesuai dengan kriteria pencarian Anda.
+                  Silakan coba lagi dengan kata kunci yang berbeda."
                 />
               </Box>
             )}
